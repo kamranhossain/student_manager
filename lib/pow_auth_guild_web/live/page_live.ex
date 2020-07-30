@@ -1,4 +1,6 @@
 defmodule PowAuthGuildWeb.PageLive do
+  @moduledoc false
+
   use PowAuthGuildWeb, :live_view
 
   @impl true
