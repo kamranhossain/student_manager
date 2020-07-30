@@ -1,12 +1,12 @@
 use Mix.Config
 
 # Configure your database
-config :pow_auth_guild, PowAuthGuild.Repo,
+config :student_manager, StudentManager.Repo,
   adapter: Ecto.Adapters.Postgres,
   hostname: "localhost",
   username: System.get_env("DB_USER") || "postgres",
   password: System.get_env("DB_PASSWORD") || "",
-  database: "pow_auth_guild_dev",
+  database: "student_manager_dev",
   show_sensitive_data_on_connection_error: true,
   pool_size: 10,
   log_level: :debug
@@ -17,7 +17,7 @@ config :pow_auth_guild, PowAuthGuild.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :pow_auth_guild, PowAuthGuildWeb.Endpoint,
+config :student_manager, StudentManagerWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,
@@ -57,13 +57,13 @@ config :pow_auth_guild, PowAuthGuildWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :pow_auth_guild, PowAuthGuildWeb.Endpoint,
+config :student_manager, StudentManagerWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r"priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$",
       ~r"priv/gettext/.*(po)$",
-      ~r"lib/pow_auth_guild_web/(live|views)/.*(ex)$",
-      ~r"lib/pow_auth_guild_web/templates/.*(eex)$"
+      ~r"lib/student_manager_web/(live|views)/.*(ex)$",
+      ~r"lib/student_manager_web/templates/.*(eex)$"
     ]
   ]
 

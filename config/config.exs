@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :pow_auth_guild,
-  ecto_repos: [PowAuthGuild.Repo]
+config :student_manager,
+  ecto_repos: [StudentManager.Repo]
 
 # Configures the endpoint
-config :pow_auth_guild, PowAuthGuildWeb.Endpoint,
+config :student_manager, StudentManagerWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "vHgirkHt3kL5bYkFaELyBibeyj6BBXFvIkjqaq95JyV34/ddMrrXHErIryeBwsel",
-  render_errors: [view: PowAuthGuildWeb.ErrorView, accepts: ~w(html json), layout: false],
-  pubsub_server: PowAuthGuild.PubSub,
+  render_errors: [view: StudentManagerWeb.ErrorView, accepts: ~w(html json), layout: false],
+  pubsub_server: StudentManager.PubSub,
   live_view: [signing_salt: System.get_env("SIGNING_SALT") || "uqnwXrRe"]
 
 # Configures Elixir's Logger
@@ -27,9 +27,9 @@ config :logger, :console,
 config :phoenix, :json_library, Jason
 
 # Use pow for user authentication
-config :pow_auth_guild, :pow,
-  user: PowAuthGuild.Users.User,
-  repo: PowAuthGuild.Repo
+config :student_manager, :pow,
+  user: StudentManager.Users.User,
+  repo: StudentManager.Repo
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.

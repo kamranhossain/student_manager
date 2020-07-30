@@ -1,4 +1,4 @@
-# PowAuthGuild
+# StudentManager
 
 Real World Phoenix |> Pow Auth |> User Roles |> LiveView |> Sending Emails
 

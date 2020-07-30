@@ -1,7 +1,7 @@
-defmodule PowAuthGuildWeb.PageLive do
+defmodule StudentManagerWeb.PageLive do
   @moduledoc false
 
-  use PowAuthGuildWeb, :live_view
+  use StudentManagerWeb, :live_view
 
   @impl true
   def mount(_params, _session, socket) do
@@ -28,7 +28,7 @@ defmodule PowAuthGuildWeb.PageLive do
   end
 
   defp search(query) do
-    if not PowAuthGuildWeb.Endpoint.config(:code_reloader) do
+    if not StudentManagerWeb.Endpoint.config(:code_reloader) do
       raise "action disabled when not in development"
     end
 

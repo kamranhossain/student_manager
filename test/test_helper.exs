@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(PowAuthGuild.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(StudentManager.Repo, :manual)

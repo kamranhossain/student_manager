@@ -1,4 +1,4 @@
-defmodule PowAuthGuild.Users.User do
+defmodule StudentManager.Users.User do
   @moduledoc """
   User Schema
   """

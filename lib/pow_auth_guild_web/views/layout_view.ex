@@ -1,3 +1,3 @@
-defmodule PowAuthGuildWeb.LayoutView do
-  use PowAuthGuildWeb, :view
+defmodule StudentManagerWeb.LayoutView do
+  use StudentManagerWeb, :view
 end

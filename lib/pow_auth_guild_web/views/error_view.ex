@@ -1,5 +1,5 @@
-defmodule PowAuthGuildWeb.ErrorView do
-  use PowAuthGuildWeb, :view
+defmodule StudentManagerWeb.ErrorView do
+  use StudentManagerWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

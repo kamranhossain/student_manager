@@ -1,4 +1,4 @@
-defmodule PowAuthGuildWeb.ChannelCase do
+defmodule StudentManagerWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule PowAuthGuildWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PowAuthGuildWeb.ChannelCase, async: true`, although
+  by setting `use StudentManagerWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule PowAuthGuildWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import PowAuthGuildWeb.ChannelCase
+      import StudentManagerWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint PowAuthGuildWeb.Endpoint
+      @endpoint StudentManagerWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PowAuthGuild.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(StudentManager.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PowAuthGuild.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(StudentManager.Repo, {:shared, self()})
     end
 
     :ok

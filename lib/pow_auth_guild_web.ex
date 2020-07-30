@@ -1,12 +1,12 @@
-defmodule PowAuthGuildWeb do
+defmodule StudentManagerWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use PowAuthGuildWeb, :controller
-      use PowAuthGuildWeb, :view
+      use StudentManagerWeb, :controller
+      use StudentManagerWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule PowAuthGuildWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: PowAuthGuildWeb
+      use Phoenix.Controller, namespace: StudentManagerWeb
 
       import Plug.Conn
-      import PowAuthGuildWeb.Gettext
-      alias PowAuthGuildWeb.Router.Helpers, as: Routes
+      import StudentManagerWeb.Gettext
+      alias StudentManagerWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/pow_auth_guild_web/templates",
-        namespace: PowAuthGuildWeb
+        root: "lib/student_manager_web/templates",
+        namespace: StudentManagerWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -45,7 +45,7 @@ defmodule PowAuthGuildWeb do
   def live_view do
     quote do
       use Phoenix.LiveView,
-        layout: {PowAuthGuildWeb.LayoutView, "live.html"}
+        layout: {StudentManagerWeb.LayoutView, "live.html"}
 
       unquote(view_helpers())
     end
@@ -72,7 +72,7 @@ defmodule PowAuthGuildWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import PowAuthGuildWeb.Gettext
+      import StudentManagerWeb.Gettext
     end
   end
 
@@ -87,9 +87,9 @@ defmodule PowAuthGuildWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import PowAuthGuildWeb.ErrorHelpers
-      import PowAuthGuildWeb.Gettext
-      alias PowAuthGuildWeb.Router.Helpers, as: Routes
+      import StudentManagerWeb.ErrorHelpers
+      import StudentManagerWeb.Gettext
+      alias StudentManagerWeb.Router.Helpers, as: Routes
     end
   end
 
