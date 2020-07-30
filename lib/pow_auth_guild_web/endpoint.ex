@@ -50,5 +50,6 @@ defmodule PowAuthGuildWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
+  plug Pow.Plug.Session, otp_app: :pow_auth_guild
   plug PowAuthGuildWeb.Router
 end
