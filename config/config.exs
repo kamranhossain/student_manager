@@ -16,7 +16,7 @@ config :pow_auth_guild, PowAuthGuildWeb.Endpoint,
   secret_key_base: "vHgirkHt3kL5bYkFaELyBibeyj6BBXFvIkjqaq95JyV34/ddMrrXHErIryeBwsel",
   render_errors: [view: PowAuthGuildWeb.ErrorView, accepts: ~w(html json), layout: false],
   pubsub_server: PowAuthGuild.PubSub,
-  live_view: [signing_salt: "uqnwXrRe"]
+  live_view: [signing_salt: System.get_env("SIGNING_SALT") || "uqnwXrRe"]
 
 # Configures Elixir's Logger
 config :logger, :console,
