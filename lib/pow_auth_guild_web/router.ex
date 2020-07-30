@@ -22,6 +22,10 @@ defmodule PowAuthGuildWeb.Router do
     pow_routes()
   end
 
+  scope "/", PowAuthGuildWeb do
+    pipe_through [:browser, :protected]
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
