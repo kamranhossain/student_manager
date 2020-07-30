@@ -1,5 +1,5 @@
-defmodule PowAuthGuildWeb.PageLiveTest do
-  use PowAuthGuildWeb.ConnCase
+defmodule StudentManagerWeb.PageLiveTest do
+  use StudentManagerWeb.ConnCase
 
   import Phoenix.LiveViewTest
 

@@ -1,16 +1,16 @@
-defmodule PowAuthGuildWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :pow_auth_guild
+defmodule StudentManagerWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :student_manager
 
   # The session will be stored in the cookie and signed,
   # this means its contents can be read but not tampered with.
   # Set :encryption_salt if you would also like to encrypt it.
   @session_options [
     store: :cookie,
-    key: "_pow_auth_guild_key",
+    key: "_student_manager_key",
     signing_salt: "mKKHJ6HS"
   ]
 
-  socket "/socket", PowAuthGuildWeb.UserSocket,
+  socket "/socket", StudentManagerWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -22,7 +22,7 @@ defmodule PowAuthGuildWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :pow_auth_guild,
+    from: :student_manager,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -32,7 +32,7 @@ defmodule PowAuthGuildWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :pow_auth_guild
+    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :student_manager
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,
@@ -50,6 +50,6 @@ defmodule PowAuthGuildWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug Pow.Plug.Session, otp_app: :pow_auth_guild
-  plug PowAuthGuildWeb.Router
+  plug Pow.Plug.Session, otp_app: :student_manager
+  plug StudentManagerWeb.Router
 end

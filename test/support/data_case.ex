@@ -1,4 +1,4 @@
-defmodule PowAuthGuild.DataCase do
+defmodule StudentManager.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -10,7 +10,7 @@ defmodule PowAuthGuild.DataCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use PowAuthGuild.DataCase, async: true`, although
+  by setting `use StudentManager.DataCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -18,20 +18,20 @@ defmodule PowAuthGuild.DataCase do
 
   using do
     quote do
-      alias PowAuthGuild.Repo
+      alias StudentManager.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import PowAuthGuild.DataCase
+      import StudentManager.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(PowAuthGuild.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(StudentManager.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(PowAuthGuild.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(StudentManager.Repo, {:shared, self()})
     end
 
     :ok

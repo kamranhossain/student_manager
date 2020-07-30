@@ -1,4 +1,4 @@
-defmodule PowAuthGuildWeb.Telemetry do
+defmodule StudentManagerWeb.Telemetry do
   @moduledoc false
 
   use Supervisor
@@ -33,11 +33,11 @@ defmodule PowAuthGuildWeb.Telemetry do
       ),
 
       # Database Metrics
-      summary("pow_auth_guild.repo.query.total_time", unit: {:native, :millisecond}),
-      summary("pow_auth_guild.repo.query.decode_time", unit: {:native, :millisecond}),
-      summary("pow_auth_guild.repo.query.query_time", unit: {:native, :millisecond}),
-      summary("pow_auth_guild.repo.query.queue_time", unit: {:native, :millisecond}),
-      summary("pow_auth_guild.repo.query.idle_time", unit: {:native, :millisecond}),
+      summary("student_manager.repo.query.total_time", unit: {:native, :millisecond}),
+      summary("student_manager.repo.query.decode_time", unit: {:native, :millisecond}),
+      summary("student_manager.repo.query.query_time", unit: {:native, :millisecond}),
+      summary("student_manager.repo.query.queue_time", unit: {:native, :millisecond}),
+      summary("student_manager.repo.query.idle_time", unit: {:native, :millisecond}),
 
       # VM Metrics
       summary("vm.memory.total", unit: {:byte, :kilobyte}),
@@ -51,7 +51,7 @@ defmodule PowAuthGuildWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {PowAuthGuildWeb, :count_users, []}
+      # {StudentManagerWeb, :count_users, []}
     ]
   end
 end

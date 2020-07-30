@@ -5,16 +5,16 @@ use Mix.Config
 # The MIX_TEST_PARTITION environment variable can be used
 # to provide built-in test partitioning in CI environment.
 # Run `mix help test` for more information.
-config :pow_auth_guild, PowAuthGuild.Repo,
+config :student_manager, StudentManager.Repo,
   username: System.get_env("DB_USER") || "postgres",
   password: System.get_env("DB_PASSWORD") || "",
-  database: "pow_auth_guild_test#{System.get_env("MIX_TEST_PARTITION")}",
+  database: "student_manager_test#{System.get_env("MIX_TEST_PARTITION")}",
   hostname: "localhost",
   pool: Ecto.Adapters.SQL.Sandbox
 
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
-config :pow_auth_guild, PowAuthGuildWeb.Endpoint,
+config :student_manager, StudentManagerWeb.Endpoint,
   http: [port: 4002],
   server: false
 

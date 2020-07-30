@@ -1,5 +1,5 @@
-defmodule PowAuthGuild.Repo do
+defmodule StudentManager.Repo do
   use Ecto.Repo,
-    otp_app: :pow_auth_guild,
+    otp_app: :student_manager,
     adapter: Ecto.Adapters.Postgres
 end

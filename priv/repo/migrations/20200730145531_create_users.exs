@@ -1,4 +1,4 @@
-defmodule PowAuthGuild.Repo.Migrations.CreateUsers do
+defmodule StudentManager.Repo.Migrations.CreateUsers do
   @moduledoc false
 
   use Ecto.Migration
