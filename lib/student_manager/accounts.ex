@@ -6,7 +6,7 @@ defmodule StudentManager.Accounts do
   import Ecto.Query, warn: false
   alias StudentManager.Repo
 
-  alias StudentManager.Users.User
+  alias StudentManager.Accounts.User
 
   @doc """
   Returns the list of users.
