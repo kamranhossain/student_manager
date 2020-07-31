@@ -28,7 +28,7 @@ config :phoenix, :json_library, Jason
 
 # Use pow for user authentication
 config :student_manager, :pow,
-  user: StudentManager.Users.User,
+  user: StudentManager.Accounts.User,
   repo: StudentManager.Repo
 
 # Import environment specific config. This must remain at the bottom
