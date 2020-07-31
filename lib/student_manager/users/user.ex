@@ -8,6 +8,8 @@ defmodule StudentManager.Users.User do
   import Ecto.Changeset
 
   schema "users" do
+    field(:roles, {:array, :string}, default: ["student"])
+
     pow_user_fields()
 
     timestamps()
