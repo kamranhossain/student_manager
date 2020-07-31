@@ -29,4 +29,10 @@ defmodule StudentManager.Accounts.User do
     |> validate_inclusion(:roles, ~w(student teacher))
   end
 
+  def teacher_registration_changeset(user_or_changeset, attrs) do
+    user_or_changeset
+    |> changeset(attrs)
+    |> change(%{roles: ["teacher"]})
+  end
+
 end
