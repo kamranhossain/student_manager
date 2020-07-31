@@ -4,7 +4,7 @@ defmodule StudentManager.AccountsTest do
   alias StudentManager.Accounts
 
   describe "users" do
-    alias StudentManager.Users.User
+    alias StudentManager.Accounts.User
 
     @valid_attrs %{
       email: "email@example.com",
