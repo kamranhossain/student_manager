@@ -35,4 +35,9 @@ defmodule StudentManager.Accounts.User do
     |> change(%{roles: ["teacher"]})
   end
 
+  def student_registration_changeset(user_or_changeset, attrs) do
+    user_or_changeset
+    |> changeset(attrs)
+    |> change(%{roles: ["student"]})
+  end
 end
