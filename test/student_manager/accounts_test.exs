@@ -84,5 +84,13 @@ defmodule StudentManager.AccountsTest do
       user = user_fixture()
       assert %Ecto.Changeset{} = Accounts.change_user(user)
     end
+
+    # @tag :pending
+    test "create_teacher/1 creates a user with the teacher role set" do
+      {:ok, user} = Accounts.create_teacher(@valid_attrs)
+      assert Enum.member?(user.roles, "teacher")
+      refute Enum.member?(user.roles, "student")
+    end
+
   end
 end
