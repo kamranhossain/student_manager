@@ -23,4 +23,9 @@ defmodule StudentManager.Users.User do
     |> validate_required([])
   end
 
+  def changeset_role(user_or_changeset, attrs) do
+    user_or_changeset
+    |> cast(attrs, [:roles])
+    |> validate_inclusion(:roles, ~w(student teacher))
+  end
 end
