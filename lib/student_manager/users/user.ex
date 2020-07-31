@@ -14,4 +14,13 @@ defmodule StudentManager.Users.User do
 
     timestamps()
   end
+
+  @doc false
+  def changeset(user, attrs) do
+    user
+    |> pow_changeset(attrs)
+    |> cast(attrs, [])
+    |> validate_required([])
+  end
+
 end
