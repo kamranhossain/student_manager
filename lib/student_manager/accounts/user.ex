@@ -1,4 +1,4 @@
-defmodule StudentManager.Users.User do
+defmodule StudentManager.Accounts.User do
   @moduledoc """
   User Schema
   """
@@ -28,4 +28,5 @@ defmodule StudentManager.Users.User do
     |> cast(attrs, [:roles])
     |> validate_inclusion(:roles, ~w(student teacher))
   end
+
 end
