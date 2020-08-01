@@ -11,17 +11,37 @@
   </head>
   <body>
     <header>
-      <section class="container">
-        <nav role="navigation">
-          <ul>
+
+      <section class="section">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+              <h1 class="title is-4"><i class="fas fa-user-graduate"></i> Student Manager</h1>
+            </a>
+          </div>
+
+          <ul class="navbar-end buttons">
+            <%= if Pow.Plug.current_user(@conn) do %>
+              <li class="navbar-item button">
+                <%= @current_user.email %>
+              </li>
+              <li class="navbar-item button is-primary">
+                <%= link "Sing out", to: Routes.pow_session_path(@conn, :delete), method: :delete %>
+              </li>
+            <% else %>
+              <li class="navbar-item button is-light">
+
+                <%= link "Register", to: Routes.pow_registration_path(@conn, :new) %>
+              </li>
+              <li class="navbar-item button is-light">
+                <%= link "Sign in", to: Routes.pow_session_path(@conn, :new) %>
+              </li>
+            <% end %>
             <%= if function_exported?(Routes, :live_dashboard_path, 2) do %>
-              <li><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
+              <li class="navbar-item button is-light"><%= link "LiveDashboard", to: Routes.live_dashboard_path(@conn, :home) %></li>
             <% end %>
           </ul>
         </nav>
-        <a href="#" class="phx-logo">
-          <h1><i class="fas fa-user-graduate"></i> Student Manager</h1>
-        </a>
       </section>
     </header>
     <%= @inner_content %>
